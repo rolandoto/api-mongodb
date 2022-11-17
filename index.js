@@ -8,7 +8,6 @@ const { dbConnection } = require('./database');
 const app    = express();
 const PORT   = process.env.PORT || 4000;
 
-console.log({"DS":PORT})
 
 dbConnection()
 // CONEXIÓN A BASE DE DATOS
