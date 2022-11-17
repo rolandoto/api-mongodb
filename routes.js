@@ -1,4 +1,3 @@
-const cors       = require('cors')
 const express    = require("express");
 const { check } = require('express-validator');
 const controller = require("./controllers.js");
@@ -6,7 +5,7 @@ const { ValidarCampos } = require('./middleweres.js');
 
 const router = express.Router();
 
-router.post ("/vendedor",cors(),[
+router.post ("/vendedor",[
                 check("idvend","es obligatorio el numero").not(),
                 check("nombre","el nombre es obligatorio").not().isEmpty(),
                 check("apellido","el apellido es obligatorio").not().isEmpty(),
@@ -15,9 +14,9 @@ router.post ("/vendedor",cors(),[
             ValidarCampos,
             controller.postVendedor)
 
-router.get("/vendedor",cors(),controller.getVendedor)
+router.get("/vendedor",controller.getVendedor)
 
-router.post("/venta",cors(),[
+router.post("/venta",[
         check("idvend","el idvend es obligatorio"),
         check("zona","la zona es obligatorio"),
         check("fecha","fecha es obliogatorio"),
@@ -26,7 +25,7 @@ router.post("/venta",cors(),[
 ValidarCampos
  ,controller.postVenta)
 
-router.get("/getventa/:id",cors(),controller.getVenta)
+router.get("/getventa/:id",controller.getVenta)
 
 
 
