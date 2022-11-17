@@ -15,23 +15,19 @@ router.post ("/vendedor",cors(),[
             ValidarCampos,
             controller.postVendedor)
 
-router.post("/venta",cors(),controller.postVenta)
+router.get("/vendedor",cors(),controller.getVendedor)
 
-router.get("/getvena",cors(),controller.getVenta)
+router.post("/venta",cors(),[
+        check("idvend","el idvend es obligatorio"),
+        check("zona","la zona es obligatorio"),
+        check("fecha","fecha es obliogatorio"),
+        check("valorventa","valorventa es obligatorio")
+],
+ValidarCampos
+ ,controller.postVenta)
 
-// --------------- API REST CRUD
+router.get("/getventa/:id",cors(),controller.getVenta)
 
-/*router.get    ("/clientes",      cors(), controller.readClientes);   // Read All
-router.get    ("/clientes/:id",  cors(), controller.readCliente);    // Read
-router.delete ("/clientes/:id",  cors(), controller.deleteCliente);  // Delete
-router.put    ("/clientes/:id",  cors(), controller.updateCliente);  // Update
-router.post   ("/clientes",      cors(), controller.createCliente);  // Create
 
-/*router.get    ("/articulos",     cors(), controller.readArticulos);  // Read All
-router.get    ("/articulos/:id", cors(), controller.readArticulo);   // Read
-router.delete ("/articulos/:id", cors(), controller.deleteArticulo); // Delete
-router.put    ("/articulos/:id", cors(), controller.updateArticulo); // Update
-router.post   ("/articulos",     cors(), controller.createArticulo); // Create
-*/
 
 module.exports = router;
