@@ -110,6 +110,14 @@ exports.getVendedor =async(rep,res=response) =>{
 
         const vendedor = await Vendedor.find({})
 
+
+        if(vendedor.length ==0){
+            res.status(201).json({
+                ok:false,
+                msg:"no hay informacion"
+            })
+        }
+
         res.status(201).json({
             ok:true,
             vendedor

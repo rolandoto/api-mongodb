@@ -12,9 +12,11 @@ const DB_URI = process.env.URI;
 
 // CONEXIÓN A BASE DE DATOS
 mongoose.connect(DB_URI)
-    .then(db => console.log("Conexión a BD correcta"))
-    .catch(error => console.log("Error al conectarse a la BD" + error));
-
+.then(() =>{
+    console.log('connect database mongoDb')
+}).catch(() =>{
+    console.log('error no connection')
+})
 
 // MIDDLEWARE
 app.use(cors());            // Soporte para CORS
