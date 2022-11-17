@@ -4,11 +4,11 @@
   "description": "Backend of a Fullstack webapp",
   "author": "jamj2000 at google dot com",
   "license": "GPL",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+  "main": "index.js",
+  "scripts": { 
+    "dev": "nodemon index.js",
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "webapp",
